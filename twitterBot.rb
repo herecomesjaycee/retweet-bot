@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'dotenv/load'
-require 'Twitter'
+require 'twitter'
 
 search_options = {
   result_type: "mixed"
