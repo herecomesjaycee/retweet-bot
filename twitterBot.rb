@@ -3,7 +3,7 @@ require 'dotenv/load'
 require 'Twitter'
 
 search_options = {
-  result_type: "recent"
+  result_type: "mixed"
 }
 
 client = Twitter::REST::Client.new do |config|
