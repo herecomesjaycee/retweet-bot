@@ -3,7 +3,8 @@ require 'dotenv/load'
 require 'twitter'
 
 search_options = {
-  result_type: "mixed"
+  result_type: "recent",
+  count: 50
 }
 
 client = Twitter::REST::Client.new do |config|
@@ -14,14 +15,14 @@ client = Twitter::REST::Client.new do |config|
 end
 
 tweet_array = []
-client.search("@GudetamaEnglish", search_options).take(10).each do |tweet|
+client.search("#gudetama #英語", search_options).take(10).each do |tweet|
   tweet_array << tweet
-  end
-x = 0
+end
+
 begin
+x = 0
 client.retweet(tweet_array[x])
 rescue
-x += 1
+x+=1
 client.retweet(tweet_array[x])
-puts "success"
 end
