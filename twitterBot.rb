@@ -4,7 +4,7 @@ require 'twitter'
 
 search_options = {
   result_type: "recent",
-  count: 50
+  count: 10
 }
 
 client = Twitter::REST::Client.new do |config|
